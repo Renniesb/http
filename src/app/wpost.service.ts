@@ -12,8 +12,10 @@ export class WpostService {
 
    }
 
-  getPosts(){
-
-   	this.http.get("https://newsapi.org/v1/articles?source=the-washington-post&sortBy=top&apiKey=c23015fcb2c248abaef820c25b393f34").map(res =>res.json()).toArray();
+	getPosts(){
+   	return this.http
+   	.get("https://newsapi.org/v1/articles?source=the-washington-post&sortBy=top&apiKey=c23015fcb2c248abaef820c25b393f34")
+   	.map(res => res.json())
+   	.map(data => data.articles);
    }
 }

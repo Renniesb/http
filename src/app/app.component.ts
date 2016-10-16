@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { WpostService} from './wpost.service.ts';
 import { OnInit } from '@angular/core';
+import 'rxjs/add/operator/map';
+
 
 
 
@@ -11,14 +13,14 @@ import { OnInit } from '@angular/core';
   providers: [WpostService]
 })
 export class AppComponent implements OnInit {
-	posts: any;
+	articles: any;
 
 	constructor (private wpservice: WpostService) {
 
   }
 
     getNew(): void {
-    this.posts = this.wpservice.getPosts();
+    this.articles = this.wpservice.getPosts();
   }
 
   ngOnInit(): void {
