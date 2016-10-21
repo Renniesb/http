@@ -1,1 +1,238 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+   padding-top: 100px;
+   background-color: #3d86c3;
+
+/*  margin: 2em;
+*/}
+
+.bg-white {
+  background-color: white;
+}
+
+.navbar {
+  height: 100px;
+  background-color: white;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+}
+.ross-wrap a {
+  color: black;
+}
+.ross-wrap {
+  padding-top: 100px;
+  background-color: #3d86c3;
+  color: #fcf8e3;
+}
+
+.panel-body{
+  color: black;
+}
+
+.ross-wrap h2 {
+  color: #fcf8e3;
+}
+.logo-wrap {
+  background-color: black;
+}
+
+.logo-wrap h2 {
+  color: #369;
+  margin-top: 0px;
+  padding-bottom: 8px;
+}
+
+.jumbotron {
+  color: #fcf8e3;
+  background-color: inherit;
+}
+
+.jumbotron h2, .jumbotron h3 {
+  margin-bottom: 20px;
+  color: #fcf8e3;
+  margin-top: 0px;
+}
+
+.jumbotron select {
+  color: black;
+}
+#myCarousel {
+    margin-top: 20px;
+    background-color: #BBD8DC;
+    height: 400px;
+}
+
+#myCarousel img {
+  margin-top: 30px;
+}
+
+.panel {
+  background-color: #fcf8e3;
+}
+
+.scroll {
+  padding-right: 5px;
+  overflow-y: auto;
+  height: 250px;
+}
+
+
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+body aside {
+  margin: 0px;
+}
+
+
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+.carousel-caption {
+  position: static;
+  top: 150px;
+  padding-top: 0px;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 30px;
+  display: inline-block;
+  /*background-color: #eee;*/
+  background-color: white;
+  border-radius: 4px;
+}
+
+nav a.navbar-brand {
+  margin-top: 0px;
+
+}
+nav a:visited, a:link {
+  color: black;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+/* items class */
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.items li.selected:hover {
+  background-color: #BBD8DC;
+  color: black;
+}
+.items .text {
+  position: relative;
+  top: -3px;
+}
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.items li.selected {
+  background-color: #CFD8DC;
+  color: black;
+}
+
+.items li.selected:hover {
+  background-color: #BBD8DC;
+}
+.items .text {
+  position: relative;
+  top: -3px;
+}
+.items .badge {
+  display: inline-block;
+  font-size: small;
+  color: black;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
