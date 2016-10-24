@@ -4,8 +4,10 @@ import { CommonModule }   from '@angular/common';
 import { AdminComponent }           from './admin.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
+import { TweetsScheduledComponent } from './tweets-scheduled.component';
 
 import { AdminRoutingModule }       from './admin-routing.module';
+
 
 @NgModule({
   imports: [
@@ -15,7 +17,8 @@ import { AdminRoutingModule }       from './admin-routing.module';
   declarations: [
     AdminComponent,
     SelectTweetsComponent,
-    ManageTweetsComponent
+    ManageTweetsComponent,
+    TweetsScheduledComponent
   ]
 })
 export class AdminModule {}

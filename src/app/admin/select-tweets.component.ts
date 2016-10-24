@@ -38,6 +38,7 @@ export class SelectTweetsComponent {
 
     getNew(): void {
     this.articles = this.wpservice.getPosts();
+
   }
 
   ngOnInit(): void {
@@ -52,10 +53,13 @@ onChange(article) {
                 this.articleservice.addArticle(article);
                 console.log(this.articleservice.getArticles());
 
+
+
             }else {
 
-               this.articleservice.getArticles().splice(article, 1);
+               //this.articleservice.getArticles().splice(article, 1);
                console.log(this.articleservice.getArticles());
+               alert("tweet is already selected");
             };
 
 }

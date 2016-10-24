@@ -24,6 +24,8 @@ import { DialogService }        from './dialog.service';
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsRoutingModule } from './settings/settings-routing.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AdminComponent }           from './admin.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
+import { TweetsScheduledComponent }    from './tweets-scheduled.component';
 
 import { AuthGuard }                from '../auth-guard.service';
 
@@ -21,6 +22,7 @@ import { AuthGuard }                from '../auth-guard.service';
             children: [
               { path: 'select', component: SelectTweetsComponent },
               { path: 'manage', component: ManageTweetsComponent },
+              { path: 'tweets', component: TweetsScheduledComponent },
               { path: '', component: SelectTweetsComponent }
             ]
           }
