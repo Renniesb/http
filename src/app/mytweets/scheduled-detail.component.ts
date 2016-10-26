@@ -2,25 +2,21 @@ import { Component, OnInit, HostBinding,
          trigger, transition, animate,
          style, state } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
-import { Hero, HeroService }  from './hero.service';
+import { Schedule, ArticleService} from './article.service.ts'
 
 @Component({
   template: `
-  <h2>HEROES</h2>
-  <div *ngIf="hero">
-    <h3>"{{hero.name}}"</h3>
-    <div>
-      <label>Id: </label>{{hero.id}}</div>
-    <div>
-      <label>Name: </label>
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </div>
+  <h2>Edit Scheduled Tweets</h2>
+  <div *ngIf="tweet">
+    <h3>"{{tweet.name}}"</h3>
+      <label>Time: </label>
+      <input type="datetime-local" [(ngModel)]="tweet.time" placeholder="time"/>
     <p>
-      <button (click)="gotoHeroes()">Back</button>
+      <button (click)="gotoTweet()">Back</button>
     </p>
   </div>
   `,
+  providers:[ArticleService],
   animations: [
     trigger('routeAnimation', [
       state('*',
@@ -45,7 +41,7 @@ import { Hero, HeroService }  from './hero.service';
     ])
   ]
 })
-export class HeroDetailComponent implements OnInit {
+export class ScheduledDetailComponent implements OnInit {
   @HostBinding('@routeAnimation') get routeAnimation() {
     return true;
   }
@@ -58,31 +54,20 @@ export class HeroDetailComponent implements OnInit {
     return 'absolute';
   }
 
-  hero: Hero;
+  tweet: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: HeroService) {}
+    private service: ArticleService) {}
 
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-       let id = +params['id']; // (+) converts string 'id' to a number
-       this.service.getHero(id).then(hero => this.hero = hero);
-     });
+   this.tweet = this.service.getTweet(this.route.snapshot.params['id']);
   }
 
-  gotoHeroes() {
-    let heroId = this.hero ? this.hero.id : null;
+  gotoTweet() { let detailId = this.tweet ? this.tweet.id : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
-    this.router.navigate(['/heroes', { id: heroId, foo: 'foo' }]);
+    this.router.navigate(['mytweets/tweets']);
   }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

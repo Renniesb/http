@@ -1,7 +1,7 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 
-import { AdminComponent }           from './admin.component';
+import { MyTweetsComponent }           from './my-tweets.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
 import { TweetsScheduledComponent } from './tweets-scheduled.component';
@@ -11,24 +11,24 @@ import { FormsModule }    from '@angular/forms';
 
 
 
-import { AdminRoutingModule }       from './admin-routing.module';
+import { MyTweetsRoutingModule }       from './my-tweets-routing.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule,
+    MyTweetsRoutingModule,
     FormsModule
   ],
   declarations: [
-    AdminComponent,
+    MyTweetsComponent,
     SelectTweetsComponent,
     ManageTweetsComponent,
     TweetsScheduledComponent,
     ScheduledDetailComponent
   ]
 })
-export class AdminModule {}
+export class MyTweetsModule {}
 
 
 /*

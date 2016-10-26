@@ -8,8 +8,8 @@ import { AuthGuard }          from './auth-guard.service';
   imports: [
     RouterModule.forRoot([
       {
-        path: 'admin',
-        loadChildren: 'app/admin/admin.module#AdminModule',
+        path: 'mytweets',
+        loadChildren: 'app/mytweets/my-tweets.module#MyTweetsModule',
         canLoad: [AuthGuard]
       }
     ])

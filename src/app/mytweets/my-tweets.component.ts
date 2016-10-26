@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
   `
 })
-export class AdminComponent {
+export class MyTweetsComponent {
 }
 
 

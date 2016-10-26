@@ -1,7 +1,7 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AdminComponent }           from './admin.component';
+import { MyTweetsComponent }           from './my-tweets.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
 import { TweetsScheduledComponent }    from './tweets-scheduled.component';
@@ -15,7 +15,7 @@ import { AuthGuard }                from '../auth-guard.service';
     RouterModule.forChild([
       {
         path: '',
-        component: AdminComponent,
+        component: MyTweetsComponent,
         canActivate: [AuthGuard],
         children: [
           {
@@ -37,7 +37,7 @@ import { AuthGuard }                from '../auth-guard.service';
     RouterModule
   ]
 })
-export class AdminRoutingModule {}
+export class MyTweetsRoutingModule {}
 
 
 /*
