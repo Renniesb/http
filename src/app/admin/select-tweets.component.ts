@@ -7,14 +7,14 @@ import { ArticleService} from './article.service.ts'
 	 <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>Choose tweets</h2>
+                    <h3>Choose tweets</h3>
 
                 <div class="scroll panel-group">
 
                 <div *ngFor="let article of articles | async" class="panel panel-primary">
                   <div class="panel-body">
                   <input type="checkbox" (change)="onChange(article.title)">
-                 		{{article.title}}
+                 		<q>{{article.title}}</q>
                 </div>
             </div>
         </div>
@@ -55,12 +55,13 @@ onChange(article) {
 
 
 
-            }else {
+            }
+  else {
 
                //this.articleservice.getArticles().splice(article, 1);
                console.log(this.articleservice.getArticles());
                alert("tweet is already selected");
-            };
+        };
 
 }
 

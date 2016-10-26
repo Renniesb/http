@@ -13,11 +13,6 @@ import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
 @NgModule({
   imports: [
     RouterModule.forChild([
-       {
-        path: '',
-        redirectTo: '/crisis-center',
-        pathMatch: 'full'
-      },
       {
         path: 'crisis-center',
         component: CrisisCenterComponent,

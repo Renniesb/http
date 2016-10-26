@@ -4,12 +4,12 @@ import { Schedule, ArticleService} from './article.service.ts'
 @Component({
   template:  `
   <div class="col-sm-6">
-    <h2> Schedule Tweets</h2>
+    <h3> Schedule Tweets</h3>
     <div class="panel-group" *ngFor="let selection of selected">
       <div class="panel panel-primary">
         <div class="panel-body">
-          <p>{{selection}}</p>
-          Time <input type="datetime-local" name="usr_time" style="height: 22px;" #time>
+          <q>{{selection}}</q>
+          <p><label>Choose Time: </label> <input type="datetime-local" name="usr_time" style="height: 22px;" #time></p>
            <button class="btn btn-primary"(click)="onChange(selection, time)">Schedule Tweet</button>
       </div>
       <input type="button" class="btn btn-danger" value="Remove" (click)="removeSelected(selection)" />
@@ -45,9 +45,10 @@ onChange(selection, time: HTMLInputElement,id) {
 
 	if(time.value.length > 0) {
 		this.id = this.articleservice.getId();
-		 console.log(this.id);
 		this.articleservice.addScheduled(selection,time.value,this.id);
 		console.log(this.articleservice.getTweets());
+    this.articleservice.getArticles().splice(selection, 1);
+    alert("Tweet Scheduled");
 	} else {
 		alert('enter a date and time')
 	}
