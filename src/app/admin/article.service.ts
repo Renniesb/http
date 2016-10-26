@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 export class Schedule {
-  constructor(public name: string, public time: number, id: number) { }
+  constructor(public name: string, public time: number, public id: number) { }
 }
 
-let SCHEDULED = [];
+let TWEETS = [];
 
 let ARTICLES = [
 
@@ -12,14 +12,16 @@ let ARTICLES = [
 
 let id = 0;
 
-
-
 @Injectable()
 export class ArticleService {
 
   getArticles() { return ARTICLES; }
 
-  getScheduled() {return SCHEDULED;}
+  getTweets() {return TWEETS;}
+
+  getTweet(id: number | string) {
+      return TWEETS.find(tweet => tweet.id == id);
+  }
 
   addArticle(article){
     ARTICLES.push(article);
@@ -30,8 +32,7 @@ export class ArticleService {
   }
 
   addScheduled(post, time, id){
-    SCHEDULED.push( new Schedule(post, time, id));
+    TWEETS.push( new Schedule(post, time, id));
   }
 
 }
-

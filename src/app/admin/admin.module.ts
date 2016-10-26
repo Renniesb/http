@@ -5,6 +5,11 @@ import { AdminComponent }           from './admin.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
 import { TweetsScheduledComponent } from './tweets-scheduled.component';
+import { ScheduledDetailComponent }    from './scheduled-detail.component';
+import { FormsModule }    from '@angular/forms';
+
+
+
 
 import { AdminRoutingModule }       from './admin-routing.module';
 
@@ -12,13 +17,15 @@ import { AdminRoutingModule }       from './admin-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ],
   declarations: [
     AdminComponent,
     SelectTweetsComponent,
     ManageTweetsComponent,
-    TweetsScheduledComponent
+    TweetsScheduledComponent,
+    ScheduledDetailComponent
   ]
 })
 export class AdminModule {}

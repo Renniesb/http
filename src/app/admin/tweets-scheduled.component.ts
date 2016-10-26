@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Schedule, ArticleService} from './article.service.ts'
+import { Schedule, ArticleService} from './article.service.ts';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   template:  `
@@ -9,32 +10,32 @@ import { Schedule, ArticleService} from './article.service.ts'
       <div class="panel panel-primary">
         <div class="panel-body">
           <p>{{tweet.name}}</p>
-          Time <input type="datetime-local" name="usr_time"  style="height: 22px;" #time>
-           <button class="btn btn-primary"(click)="onChange(tweet, time)">Change Scheduled time</button>
+          <p>{{tweet.time}}</p>
+          <h1>{{tweet.id}}</h1>
+           <button class="btn btn-primary" [routerLink]="['/tweets',  tweet.id ]">Edit Scheduled time</button>
       </div>
-      <input type="button" class="btn btn-danger" value="Remove" (click)="removeScheduled(tweet)" />
+      <input type="button" class="btn btn-danger" value="Remove"(click)="removeScheduled(tweet)" />
     </div>
    </div>
   `,
   providers:[ArticleService]
 })
 export class TweetsScheduledComponent implements OnInit {
-scheduled: any;
+scheduled: Schedule[];
 
-ngOnInit(){
-	this.getScheduled();
-}
+private selectedId: number;
 
-constructor(private articleservice: ArticleService){}
+  constructor(
+    private service: ArticleService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-getScheduled(){
-	this.scheduled = this.articleservice.getScheduled();
-}
-
-onChange(tweet, time) {
+  ngOnInit() {
+    this.scheduled = this.service.getTweets();
+  }
 
 
-}
 
 }
 

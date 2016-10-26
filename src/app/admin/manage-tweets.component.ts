@@ -44,10 +44,10 @@ removeSelected(selection){
 onChange(selection, time: HTMLInputElement,id) {
 
 	if(time.value.length > 0) {
-		this.id = this.articleservice.getId()
+		this.id = this.articleservice.getId();
 		 console.log(this.id);
 		this.articleservice.addScheduled(selection,time.value,this.id);
-		console.log(this.articleservice.getScheduled());
+		console.log(this.articleservice.getTweets());
 	} else {
 		alert('enter a date and time')
 	}
