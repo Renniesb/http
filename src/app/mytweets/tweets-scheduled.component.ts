@@ -3,19 +3,7 @@ import { Schedule, ArticleService} from './article.service.ts';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  template:  `
-	<div class="col-sm-6">
-    <h3>Tweets Scheduled </h3>
-    <div class="panel-group" *ngFor="let tweet of scheduled">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <p>{{tweet.name}}</p>
-          <label>Date Scheduled: </label><input type="datetime-local" [(ngModel)]="tweet.time" style="height: 22px;">
-      </div>
-      <input type="button" class="btn btn-danger" value="Remove"(click)="removeScheduled(tweet)" />
-    </div>
-   </div>
-  `,
+  templateUrl: './tweets-scheduled.component.html',
   providers:[ArticleService]
 })
 export class TweetsScheduledComponent implements OnInit {

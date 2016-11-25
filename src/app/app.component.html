@@ -14,10 +14,14 @@
         </div>
       <div class="collapse navbar-collapse navHeaderCollapse">
         <ul class="nav navbar-nav">
-          <li><a routerLink="/tutorial" routerLinkActive="active">Tutorial</a></li>
-          <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
-          <li><a routerLink="/mytweets" routerLinkActive="active">My Tweets</a></li>
-          <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+          <li><a id="myPopover" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Step by step app walkthrough." routerLink="/tutorial" routerLinkActive="active">Tutorial</a>
+          </li>
+          <li><a id="myPopover2" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Change settings like time zone and tweet topics." routerLink="/settings" routerLinkActive="active">Settings</a>
+          </li>
+          <li><a id="myPopover3" data-toggle="popover"   data-trigger="hover" data-placement="bottom" data-content="Select and schedule tweets here"  routerLink="/mytweets" routerLinkActive="active">My Tweets</a>
+          </li>
+          <li><a id="myPopover4" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Login and out of the application here" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,0 +1,876 @@
+
+<ul id="sortable">
+  <li *ngFor="let selection of selected">
+
+    <!-- FIRST-TWEET -->
+    <div class="row">
+
+  <div class="col-sm-7 ">
+
+    <div class="row">
+      <div class="col-xs-1">
+        <aside class="clickable"><a class="glyphicon glyphicon-resize-vertical"></a>          </aside>
+
+      </div>
+      <div class="col-xs-10">
+          <div class="outline">
+          {{selection}}
+          </div>
+       <span data-toggle="modal" data-target="#editweet"  class="clickable glyphicon-ring"><a class="glyphicon glyphicon-pencil"></a></span>
+       <span><a title="HELP" data-placement="bottom" data-toggle="popover" data-trigger="hover" data-content="This is one of your selected tweets" class="glyphicon glyphicon-question-sign"></a></span>
+       <span><a class="glyphicon glyphicon-remove-circle"></a></span>
+      </div>
+    </div>
+  </div>
+<!-- END OF FIRST TWEET -->
+
+<!-- FIRST SCHEDULER -->
+  <div class="col-xs-11 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+
+          <div class="form-group">
+            <div class='input-group date datetimepicker1'>
+                <input #time (change)="onChange(selection, time)" placeholder="Click calendar to schedule" type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+  </div>
+</div>
+
+<!-- END OF FIRST SCHEDULER -->
+</li>
+</ul>
+
+
+
+<!-- MODAL: EDIT TOPICS -->
+    <div class="modal fade" id="editopics" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Select Topics</h4>
+        </div>
+        <div class="modal-body">
+
+<form>
+  <input type="checkbox" name="gender" value="ads"> Advertising <br>
+  <input type="checkbox" name="gender" value="social media"> Social Media <br>
+  <input type="checkbox" name="gender" value="millennials"> Millennials
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- END OF MODAL: EDIT TOPICS -->
+<!-- EDIT TWEETS MODAL -->
+  <!-- Modal -->
+  <div id="editweet" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Tweet</h4>
+        </div>
+        <div class="modal-body">
+          <textarea rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, perferendis mollitia tempore dolore iure. Nulla, autem ratione quod velit molestias!
+          </textarea>
+          <p>
+          <span>Twitter Handle: @</span>
+          <input  style="background-color: white;" type="text">
+          </p>
+          <span>Hashtag: #</span>
+          <input  style="background-color: white;" type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!-- END OF EDIT TWEETS MODAL -->
+
+<!-- TIME ZONES MODALS -->
+  <!-- Modal -->
+  <div class="modal fade" id="Arctic" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+<form>
+<input type="radio" name="time_zone" value="Longyearbyen">Arctic/Longyearbyen<br>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="Africa" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+
+<form>
+
+
+<input type="radio" name="time_zone" value="  Africa/Abidjan  ">  Africa/Abidjan  <br>
+<input type="radio" name="time_zone" value="  Africa/Accra  ">  Africa/Accra  <br>
+<input type="radio" name="time_zone" value="  Africa/Addis_Ababa  ">  Africa/Addis_Ababa  <br>
+<input type="radio" name="time_zone" value="  Africa/Algiers  ">  Africa/Algiers  <br>
+<input type="radio" name="time_zone" value="  Africa/Asmara ">  Africa/Asmara <br>
+<input type="radio" name="time_zone" value="  Africa/Asmera ">  Africa/Asmera <br>
+<input type="radio" name="time_zone" value="  Africa/Bamako ">  Africa/Bamako <br>
+<input type="radio" name="time_zone" value="  Africa/Bangui ">  Africa/Bangui <br>
+<input type="radio" name="time_zone" value="  Africa/Banjul ">  Africa/Banjul <br>
+<input type="radio" name="time_zone" value="  Africa/Bissau ">  Africa/Bissau <br>
+<input type="radio" name="time_zone" value="  Africa/Blantyre ">  Africa/Blantyre <br>
+<input type="radio" name="time_zone" value="  Africa/Brazzaville  ">  Africa/Brazzaville  <br>
+<input type="radio" name="time_zone" value="  Africa/Bujumbura  ">  Africa/Bujumbura  <br>
+<input type="radio" name="time_zone" value="  Africa/Cairo  ">  Africa/Cairo  <br>
+<input type="radio" name="time_zone" value="  Africa/Casablanca ">  Africa/Casablanca <br>
+<input type="radio" name="time_zone" value="  Africa/Ceuta  ">  Africa/Ceuta  <br>
+<input type="radio" name="time_zone" value="  Africa/Conakry  ">  Africa/Conakry  <br>
+<input type="radio" name="time_zone" value="  Africa/Dakar  ">  Africa/Dakar  <br>
+<input type="radio" name="time_zone" value="  Africa/Dar_es_Salaam  ">  Africa/Dar_es_Salaam  <br>
+<input type="radio" name="time_zone" value="  Africa/Djibouti ">  Africa/Djibouti <br>
+<input type="radio" name="time_zone" value="  Africa/Douala ">  Africa/Douala <br>
+<input type="radio" name="time_zone" value="  Africa/El_Aaiun ">  Africa/El_Aaiun <br>
+<input type="radio" name="time_zone" value="  Africa/Freetown ">  Africa/Freetown <br>
+<input type="radio" name="time_zone" value="  Africa/Gaborone ">  Africa/Gaborone <br>
+<input type="radio" name="time_zone" value="  Africa/Harare ">  Africa/Harare <br>
+<input type="radio" name="time_zone" value="  Africa/Johannesburg ">  Africa/Johannesburg <br>
+<input type="radio" name="time_zone" value="  Africa/Juba ">  Africa/Juba <br>
+<input type="radio" name="time_zone" value="  Africa/Kampala  ">  Africa/Kampala  <br>
+<input type="radio" name="time_zone" value="  Africa/Khartoum ">  Africa/Khartoum <br>
+<input type="radio" name="time_zone" value="  Africa/Kigali ">  Africa/Kigali <br>
+<input type="radio" name="time_zone" value="  Africa/Kinshasa ">  Africa/Kinshasa <br>
+<input type="radio" name="time_zone" value="  Africa/Lagos  ">  Africa/Lagos  <br>
+<input type="radio" name="time_zone" value="  Africa/Libreville ">  Africa/Libreville <br>
+<input type="radio" name="time_zone" value="  Africa/Lome ">  Africa/Lome <br>
+<input type="radio" name="time_zone" value="  Africa/Luanda ">  Africa/Luanda <br>
+<input type="radio" name="time_zone" value="  Africa/Lubumbashi ">  Africa/Lubumbashi <br>
+<input type="radio" name="time_zone" value="  Africa/Lusaka ">  Africa/Lusaka <br>
+<input type="radio" name="time_zone" value="  Africa/Malabo ">  Africa/Malabo <br>
+<input type="radio" name="time_zone" value="  Africa/Maputo ">  Africa/Maputo <br>
+<input type="radio" name="time_zone" value="  Africa/Maseru ">  Africa/Maseru <br>
+<input type="radio" name="time_zone" value="  Africa/Mbabane  ">  Africa/Mbabane  <br>
+<input type="radio" name="time_zone" value="  Africa/Mogadishu  ">  Africa/Mogadishu  <br>
+<input type="radio" name="time_zone" value="  Africa/Monrovia ">  Africa/Monrovia <br>
+<input type="radio" name="time_zone" value="  Africa/Nairobi  ">  Africa/Nairobi  <br>
+<input type="radio" name="time_zone" value="  Africa/Ndjamena ">  Africa/Ndjamena <br>
+<input type="radio" name="time_zone" value="  Africa/Niamey ">  Africa/Niamey <br>
+<input type="radio" name="time_zone" value="  Africa/Nouakchott ">  Africa/Nouakchott <br>
+<input type="radio" name="time_zone" value="  Africa/Ouagadougou  ">  Africa/Ouagadougou  <br>
+<input type="radio" name="time_zone" value="  Africa/Porto-Novo ">  Africa/Porto-Novo <br>
+<input type="radio" name="time_zone" value="  Africa/Sao_Tome ">  Africa/Sao_Tome <br>
+<input type="radio" name="time_zone" value="  Africa/Timbuktu ">  Africa/Timbuktu <br>
+<input type="radio" name="time_zone" value="  Africa/Tripoli  ">  Africa/Tripoli  <br>
+<input type="radio" name="time_zone" value="  Africa/Tunis  ">  Africa/Tunis  <br>
+<input type="radio" name="time_zone" value="  Africa/Windhoek ">  Africa/Windhoek
+</form>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="America" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+<form>
+<table>
+<tr><td>
+<input type="radio" name="time_zone" value="  America/Adak  ">  America/Adak  <br>
+<input type="radio" name="time_zone" value="  America/Anchorage ">  America/Anchorage <br>
+<input type="radio" name="time_zone" value="  America/Anguilla  ">  America/Anguilla  <br>
+<input type="radio" name="time_zone" value="  America/Antigua ">  America/Antigua <br>
+<input type="radio" name="time_zone" value="  America/Araguaina ">  America/Araguaina <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Buenos_Aires  ">  America/Argentina/Buenos_Aires  <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Catamarca ">  America/Argentina/Catamarca <br>
+<input type="radio" name="time_zone" value="  America/Argentina/ComodRivadavia  ">  America/Argentina/ComodRivadavia  <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Cordoba ">  America/Argentina/Cordoba <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Jujuy ">  America/Argentina/Jujuy <br>
+<input type="radio" name="time_zone" value="  America/Argentina/La_Rioja  ">  America/Argentina/La_Rioja  <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Mendoza ">  America/Argentina/Mendoza <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Rio_Gallegos  ">  America/Argentina/Rio_Gallegos  <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Salta ">  America/Argentina/Salta <br>
+<input type="radio" name="time_zone" value="  America/Argentina/San_Juan  ">  America/Argentina/San_Juan  <br>
+<input type="radio" name="time_zone" value="  America/Argentina/San_Luis  ">  America/Argentina/San_Luis  <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Tucuman ">  America/Argentina/Tucuman <br>
+<input type="radio" name="time_zone" value="  America/Argentina/Ushuaia ">  America/Argentina/Ushuaia <br>
+<input type="radio" name="time_zone" value="  America/Aruba ">  America/Aruba <br>
+<input type="radio" name="time_zone" value="  America/Asuncion  ">  America/Asuncion  <br>
+<input type="radio" name="time_zone" value="  America/Atikokan  ">  America/Atikokan  <br>
+<input type="radio" name="time_zone" value="  America/Atka  ">  America/Atka  <br>
+<input type="radio" name="time_zone" value="  America/Bahia ">  America/Bahia <br>
+<input type="radio" name="time_zone" value="  America/Bahia_Banderas  ">  America/Bahia_Banderas  <br>
+<input type="radio" name="time_zone" value="  America/Barbados  ">  America/Barbados  <br>
+<input type="radio" name="time_zone" value="  America/Belem ">  America/Belem <br>
+<input type="radio" name="time_zone" value="  America/Belize  ">  America/Belize  <br>
+<input type="radio" name="time_zone" value="  America/Blanc-Sablon  ">  America/Blanc-Sablon  <br>
+<input type="radio" name="time_zone" value="  America/Boa_Vista ">  America/Boa_Vista <br>
+<input type="radio" name="time_zone" value="  America/Bogota  ">  America/Bogota  <br>
+<input type="radio" name="time_zone" value="  America/Boise ">  America/Boise <br>
+<input type="radio" name="time_zone" value="  America/Buenos_Aires  ">  America/Buenos_Aires  <br>
+<input type="radio" name="time_zone" value="  America/Cambridge_Bay ">  America/Cambridge_Bay <br>
+<input type="radio" name="time_zone" value="  America/Campo_Grande  ">  America/Campo_Grande  <br>
+<input type="radio" name="time_zone" value="  America/Cancun  ">  America/Cancun  <br>
+<input type="radio" name="time_zone" value="  America/Caracas ">  America/Caracas <br>
+<input type="radio" name="time_zone" value="  America/Catamarca ">  America/Catamarca <br>
+<input type="radio" name="time_zone" value="  America/Cayenne ">  America/Cayenne <br>
+<input type="radio" name="time_zone" value="  America/Cayman  ">  America/Cayman  <br>
+<input type="radio" name="time_zone" value="  America/Chicago ">  America/Chicago <br>
+<input type="radio" name="time_zone" value="  America/Chihuahua ">  America/Chihuahua <br>
+<input type="radio" name="time_zone" value="  America/Coral_Harbour ">  America/Coral_Harbour <br>
+<input type="radio" name="time_zone" value="  America/Cordoba ">  America/Cordoba <br>
+<input type="radio" name="time_zone" value="  America/Costa_Rica  ">  America/Costa_Rica  <br>
+<input type="radio" name="time_zone" value="  America/Creston ">  America/Creston <br>
+<input type="radio" name="time_zone" value="  America/Cuiaba  ">  America/Cuiaba  <br>
+<input type="radio" name="time_zone" value="  America/Curacao ">  America/Curacao <br>
+<input type="radio" name="time_zone" value="  America/Danmarkshavn  ">  America/Danmarkshavn  <br>
+<input type="radio" name="time_zone" value="  America/Dawson  ">  America/Dawson  <br>
+<input type="radio" name="time_zone" value="  America/Dawson_Creek  ">  America/Dawson_Creek  <br>
+<input type="radio" name="time_zone" value="  America/Denver  ">  America/Denver  <br>
+<input type="radio" name="time_zone" value="  America/Detroit ">  America/Detroit <br>
+<input type="radio" name="time_zone" value="  America/Dominica  ">  America/Dominica  <br>
+<input type="radio" name="time_zone" value="  America/Edmonton  ">  America/Edmonton  <br>
+<input type="radio" name="time_zone" value="  America/Eirunepe  ">  America/Eirunepe  <br>
+<input type="radio" name="time_zone" value="  America/El_Salvador ">  America/El_Salvador <br>
+<input type="radio" name="time_zone" value="  America/Ensenada  ">  America/Ensenada  <br>
+<input type="radio" name="time_zone" value="  America/Fort_Wayne  ">  America/Fort_Wayne  <br>
+<input type="radio" name="time_zone" value="  America/Fortaleza ">  America/Fortaleza <br>
+<input type="radio" name="time_zone" value="  America/Glace_Bay ">  America/Glace_Bay <br>
+<input type="radio" name="time_zone" value="  America/Godthab ">  America/Godthab <br>
+<input type="radio" name="time_zone" value="  America/Goose_Bay ">  America/Goose_Bay <br>
+<input type="radio" name="time_zone" value="  America/Grand_Turk  ">  America/Grand_Turk  <br>
+<input type="radio" name="time_zone" value="  America/Grenada ">  America/Grenada <br>
+<input type="radio" name="time_zone" value="  America/Guadeloupe  ">  America/Guadeloupe  <br>
+<input type="radio" name="time_zone" value="  America/Guatemala ">  America/Guatemala <br>
+<input type="radio" name="time_zone" value="  America/Guayaquil ">  America/Guayaquil <br>
+<input type="radio" name="time_zone" value="  America/Guyana  ">  America/Guyana  <br>
+<input type="radio" name="time_zone" value="  America/Halifax ">  America/Halifax <br>
+<input type="radio" name="time_zone" value="  America/Havana  ">  America/Havana  <br>
+<input type="radio" name="time_zone" value="  America/Hermosillo  ">  America/Hermosillo  <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Indianapolis  ">  America/Indiana/Indianapolis  <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Knox  ">  America/Indiana/Knox  <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Marengo ">  America/Indiana/Marengo <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Petersburg  ">  America/Indiana/Petersburg  <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Tell_City ">  America/Indiana/Tell_City <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Vevay ">  America/Indiana/Vevay <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Vincennes ">  America/Indiana/Vincennes <br>
+<input type="radio" name="time_zone" value="  America/Indiana/Winamac ">  America/Indiana/Winamac <br>
+<input type="radio" name="time_zone" value="  America/Indianapolis  ">  America/Indianapolis  <br>
+<input type="radio" name="time_zone" value="  America/Inuvik  ">  America/Inuvik  <br>
+<input type="radio" name="time_zone" value="  America/Iqaluit ">  America/Iqaluit <br>
+<input type="radio" name="time_zone" value="  America/Jamaica ">  America/Jamaica <br>
+<input type="radio" name="time_zone" value="  America/Jujuy ">  America/Jujuy <br>
+<input type="radio" name="time_zone" value="  America/Juneau  ">  America/Juneau  <br>
+<input type="radio" name="time_zone" value="  America/Kentucky/Louisville ">  America/Kentucky/Louisville <br>
+<input type="radio" name="time_zone" value="  America/Kentucky/Monticello ">  America/Kentucky/Monticello <br>
+<input type="radio" name="time_zone" value="  America/Knox_IN ">  America/Knox_IN <br>
+<input type="radio" name="time_zone" value="  America/Kralendijk  ">  America/Kralendijk  <br>
+</td><td>
+<input type="radio" name="time_zone" value="  America/La_Paz  ">  America/La_Paz  <br>
+<input type="radio" name="time_zone" value="  America/Lima  ">  America/Lima  <br>
+<input type="radio" name="time_zone" value="  America/Los_Angeles ">  America/Los_Angeles <br>
+<input type="radio" name="time_zone" value="  America/Louisville  ">  America/Louisville  <br>
+<input type="radio" name="time_zone" value="  America/Lower_Princes ">  America/Lower_Princes <br>
+<input type="radio" name="time_zone" value="  America/Maceio  ">  America/Maceio  <br>
+<input type="radio" name="time_zone" value="  America/Managua ">  America/Managua <br>
+<input type="radio" name="time_zone" value="  America/Manaus  ">  America/Manaus  <br>
+<input type="radio" name="time_zone" value="  America/Marigot ">  America/Marigot <br>
+<input type="radio" name="time_zone" value="  America/Martinique  ">  America/Martinique  <br>
+<input type="radio" name="time_zone" value="  America/Matamoros ">  America/Matamoros <br>
+<input type="radio" name="time_zone" value="  America/Mazatlan  ">  America/Mazatlan  <br>
+<input type="radio" name="time_zone" value="  America/Mendoza ">  America/Mendoza <br>
+<input type="radio" name="time_zone" value="  America/Menominee ">  America/Menominee <br>
+<input type="radio" name="time_zone" value="  America/Merida  ">  America/Merida  <br>
+<input type="radio" name="time_zone" value="  America/Metlakatla  ">  America/Metlakatla  <br>
+<input type="radio" name="time_zone" value="  America/Mexico_City ">  America/Mexico_City <br>
+<input type="radio" name="time_zone" value="  America/Miquelon  ">  America/Miquelon  <br>
+<input type="radio" name="time_zone" value="  America/Moncton ">  America/Moncton <br>
+<input type="radio" name="time_zone" value="  America/Monterrey ">  America/Monterrey <br>
+<input type="radio" name="time_zone" value="  America/Montevideo  ">  America/Montevideo  <br>
+<input type="radio" name="time_zone" value="  America/Montreal  ">  America/Montreal  <br>
+<input type="radio" name="time_zone" value="  America/Montserrat  ">  America/Montserrat  <br>
+<input type="radio" name="time_zone" value="  America/Nassau  ">  America/Nassau  <br>
+<input type="radio" name="time_zone" value="  America/New_York  ">  America/New_York  <br>
+<input type="radio" name="time_zone" value="  America/Nipigon ">  America/Nipigon <br>
+<input type="radio" name="time_zone" value="  America/Nome  ">  America/Nome  <br>
+<input type="radio" name="time_zone" value="  America/Noronha ">  America/Noronha <br>
+<input type="radio" name="time_zone" value="  America/North_Dakota/Beulah ">  America/North_Dakota/Beulah <br>
+<input type="radio" name="time_zone" value="  America/North_Dakota/Center ">  America/North_Dakota/Center <br>
+<input type="radio" name="time_zone" value="  America/North_Dakota/New_Salem  ">  America/North_Dakota/New_Salem  <br>
+<input type="radio" name="time_zone" value="  America/Ojinaga ">  America/Ojinaga <br>
+<input type="radio" name="time_zone" value="  America/Panama  ">  America/Panama  <br>
+<input type="radio" name="time_zone" value="  America/Pangnirtung ">  America/Pangnirtung <br>
+<input type="radio" name="time_zone" value="  America/Paramaribo  ">  America/Paramaribo  <br>
+<input type="radio" name="time_zone" value="  America/Phoenix ">  America/Phoenix <br>
+<input type="radio" name="time_zone" value="  America/Port-au-Prince  ">  America/Port-au-Prince  <br>
+<input type="radio" name="time_zone" value="  America/Port_of_Spain ">  America/Port_of_Spain <br>
+<input type="radio" name="time_zone" value="  America/Porto_Acre  ">  America/Porto_Acre  <br>
+<input type="radio" name="time_zone" value="  America/Porto_Velho ">  America/Porto_Velho <br>
+<input type="radio" name="time_zone" value="  America/Puerto_Rico ">  America/Puerto_Rico <br>
+<input type="radio" name="time_zone" value="  America/Rainy_River ">  America/Rainy_River <br>
+<input type="radio" name="time_zone" value="  America/Rankin_Inlet  ">  America/Rankin_Inlet  <br>
+<input type="radio" name="time_zone" value="  America/Recife  ">  America/Recife  <br>
+<input type="radio" name="time_zone" value="  America/Regina  ">  America/Regina  <br>
+<input type="radio" name="time_zone" value="  America/Resolute  ">  America/Resolute  <br>
+<input type="radio" name="time_zone" value="  America/Rio_Branco  ">  America/Rio_Branco  <br>
+<input type="radio" name="time_zone" value="  America/Rosario ">  America/Rosario <br>
+<input type="radio" name="time_zone" value="  America/Santa_Isabel  ">  America/Santa_Isabel  <br>
+<input type="radio" name="time_zone" value="  America/Santarem  ">  America/Santarem  <br>
+<input type="radio" name="time_zone" value="  America/Santiago  ">  America/Santiago  <br>
+<input type="radio" name="time_zone" value="  America/Santo_Domingo ">  America/Santo_Domingo <br>
+<input type="radio" name="time_zone" value="  America/Sao_Paulo ">  America/Sao_Paulo <br>
+<input type="radio" name="time_zone" value="  America/Scoresbysund  ">  America/Scoresbysund  <br>
+<input type="radio" name="time_zone" value="  America/Shiprock  ">  America/Shiprock  <br>
+<input type="radio" name="time_zone" value="  America/Sitka ">  America/Sitka <br>
+<input type="radio" name="time_zone" value="  America/St_Barthelemy ">  America/St_Barthelemy <br>
+<input type="radio" name="time_zone" value="  America/St_Johns  ">  America/St_Johns  <br>
+<input type="radio" name="time_zone" value="  America/St_Kitts  ">  America/St_Kitts  <br>
+<input type="radio" name="time_zone" value="  America/St_Lucia  ">  America/St_Lucia  <br>
+<input type="radio" name="time_zone" value="  America/St_Thomas ">  America/St_Thomas <br>
+<input type="radio" name="time_zone" value="  America/St_Vincent  ">  America/St_Vincent  <br>
+<input type="radio" name="time_zone" value="  America/Swift_Current ">  America/Swift_Current <br>
+<input type="radio" name="time_zone" value="  America/Tegucigalpa ">  America/Tegucigalpa <br>
+<input type="radio" name="time_zone" value="  America/Thule ">  America/Thule <br>
+<input type="radio" name="time_zone" value="  America/Thunder_Bay ">  America/Thunder_Bay <br>
+<input type="radio" name="time_zone" value="  America/Tijuana ">  America/Tijuana <br>
+<input type="radio" name="time_zone" value="  America/Toronto ">  America/Toronto <br>
+<input type="radio" name="time_zone" value="  America/Tortola ">  America/Tortola <br>
+<input type="radio" name="time_zone" value="  America/Vancouver ">  America/Vancouver <br>
+<input type="radio" name="time_zone" value="  America/Virgin  ">  America/Virgin  <br>
+<input type="radio" name="time_zone" value="  America/Whitehorse  ">  America/Whitehorse  <br>
+<input type="radio" name="time_zone" value="  America/Winnipeg  ">  America/Winnipeg  <br>
+<input type="radio" name="time_zone" value="  America/Yakutat ">  America/Yakutat <br>
+<input type="radio" name="time_zone" value="  America/Yellowknife ">  America/Yellowknife
+</td></tr>
+</table>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- Next Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="Antartica" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+<form>
+<input type="radio" name="time_zone" value="  Antarctica/Casey  ">  Antarctica/Casey  <br>
+<input type="radio" name="time_zone" value="  Antarctica/Davis  ">  Antarctica/Davis  <br>
+<input type="radio" name="time_zone" value="  Antarctica/DumontDUrville ">  Antarctica/DumontDUrville <br>
+<input type="radio" name="time_zone" value="  Antarctica/Macquarie  ">  Antarctica/Macquarie  <br>
+<input type="radio" name="time_zone" value="  Antarctica/Mawson ">  Antarctica/Mawson <br>
+<input type="radio" name="time_zone" value="  Antarctica/McMurdo  ">  Antarctica/McMurdo  <br>
+<input type="radio" name="time_zone" value="  Antarctica/Palmer ">  Antarctica/Palmer <br>
+<input type="radio" name="time_zone" value="  Antarctica/Rothera  ">  Antarctica/Rothera  <br>
+<input type="radio" name="time_zone" value="  Antarctica/South_Pole ">  Antarctica/South_Pole <br>
+<input type="radio" name="time_zone" value="  Antarctica/Syowa  ">  Antarctica/Syowa  <br>
+<input type="radio" name="time_zone" value="  Antarctica/Vostok ">  Antarctica/Vostok
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+<!-- Next Modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Australia" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+
+
+
+
+
+<form>
+<input type="radio" name="time_zone" value="  Australia/ACT ">  Australia/ACT <br>
+<input type="radio" name="time_zone" value="  Australia/Adelaide  ">  Australia/Adelaide  <br>
+<input type="radio" name="time_zone" value="  Australiabrisbane  ">  Australiabrisbane  <br>
+<input type="radio" name="time_zone" value="  Australiabroken_Hill ">  Australia/Broken_Hill <br>
+<input type="radio" name="time_zone" value="  Australia/Canberra  ">  Australia/Canberra  <br>
+<input type="radio" name="time_zone" value="  Australia/Currie  ">  Australia/Currie  <br>
+<input type="radio" name="time_zone" value="  Australia/Darwin  ">  Australia/Darwin  <br>
+<input type="radio" name="time_zone" value="  Australia/Eucla ">  Australia/Eucla <br>
+<input type="radio" name="time_zone" value="  Australia/Hobart  ">  Australia/Hobart  <br>
+<input type="radio" name="time_zone" value="  Australia/LHI ">  Australia/LHI <br>
+<input type="radio" name="time_zone" value="  Australia/Lindeman  ">  Australia/Lindeman  <br>
+<input type="radio" name="time_zone" value="  Australia/Lord_Howe ">  Australia/Lord_Howe <br>
+<input type="radio" name="time_zone" value="  Australia/Melbourne ">  Australia/Melbourne <br>
+<input type="radio" name="time_zone" value="  Australia/North ">  Australia/North <br>
+<input type="radio" name="time_zone" value="  Australia/NSW ">  Australia/NSW <br>
+<input type="radio" name="time_zone" value="  Australia/Perth ">  Australia/Perth <br>
+<input type="radio" name="time_zone" value="  Australia/Queensland  ">  Australia/Queensland  <br>
+<input type="radio" name="time_zone" value="  Australia/South ">  Australia/South <br>
+<input type="radio" name="time_zone" value="  Australia/Sydney  ">  Australia/Sydney  <br>
+<input type="radio" name="time_zone" value="  Australia/Tasmania  ">  Australia/Tasmania  <br>
+<input type="radio" name="time_zone" value="  Australia/Victoria  ">  Australia/Victoria  <br>
+<input type="radio" name="time_zone" value="  Australia/West  ">  Australia/West  <br>
+<input type="radio" name="time_zone" value="  Australia/Yancowinna  ">  Australia/Yancowinna
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!-- Next Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="Atlantic" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+
+
+
+
+
+<form>
+<input type="radio" name="time_zone" value="  Atlantic/Azores ">  Atlantic/Azores <br>
+<input type="radio" name="time_zone" value="  Atlantic/Bermuda  ">  Atlantic/Bermuda  <br>
+<input type="radio" name="time_zone" value="  Atlantic/Canary ">  Atlantic/Canary <br>
+<input type="radio" name="time_zone" value="  Atlantic/Cape_Verde ">  Atlantic/Cape_Verde <br>
+<input type="radio" name="time_zone" value="  Atlantic/Faeroe ">  Atlantic/Faeroe <br>
+<input type="radio" name="time_zone" value="  Atlantic/Faroe  ">  Atlantic/Faroe  <br>
+<input type="radio" name="time_zone" value="  Atlantic/Jan_Mayen  ">  Atlantic/Jan_Mayen  <br>
+<input type="radio" name="time_zone" value="  Atlantic/Madeira  ">  Atlantic/Madeira  <br>
+<input type="radio" name="time_zone" value="  Atlantic/Reykjavik  ">  Atlantic/Reykjavik  <br>
+<input type="radio" name="time_zone" value="  Atlantic/South_Georgia  ">  Atlantic/South_Georgia  <br>
+<input type="radio" name="time_zone" value="  Atlantic/St_Helena  ">  Atlantic/St_Helena  <br>
+<input type="radio" name="time_zone" value="  Atlantic/Stanley  ">  Atlantic/Stanley
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- Next Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="Europe" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+
+
+
+
+
+<form>
+
+
+
+
+<input type="radio" name="time_zone" value="  Europe/Amsterdam  ">  Europe/Amsterdam  <br>
+<input type="radio" name="time_zone" value="  Europe/Andorra  ">  Europe/Andorra  <br>
+<input type="radio" name="time_zone" value="  Europe/Athens ">  Europe/Athens <br>
+<input type="radio" name="time_zone" value="  Europe/Belfast  ">  Europe/Belfast  <br>
+<input type="radio" name="time_zone" value="  Europe/Belgrade ">  Europe/Belgrade <br>
+<input type="radio" name="time_zone" value="  Europe/Berlin ">  Europe/Berlin <br>
+<input type="radio" name="time_zone" value="  Europe/Bratislava ">  Europe/Bratislava <br>
+<input type="radio" name="time_zone" value="  Europe/Brussels ">  Europe/Brussels <br>
+<input type="radio" name="time_zone" value="  Europe/Bucharest  ">  Europe/Bucharest  <br>
+<input type="radio" name="time_zone" value="  Europe/Budapest ">  Europe/Budapest <br>
+<input type="radio" name="time_zone" value="  Europe/Busingen ">  Europe/Busingen <br>
+<input type="radio" name="time_zone" value="  Europe/Chisinau ">  Europe/Chisinau <br>
+<input type="radio" name="time_zone" value="  Europe/Copenhagen ">  Europe/Copenhagen <br>
+<input type="radio" name="time_zone" value="  Europe/Dublin ">  Europe/Dublin <br>
+<input type="radio" name="time_zone" value="  Europe/Gibraltar  ">  Europe/Gibraltar  <br>
+<input type="radio" name="time_zone" value="  Europe/Guernsey ">  Europe/Guernsey <br>
+<input type="radio" name="time_zone" value="  Europe/Helsinki ">  Europe/Helsinki <br>
+<input type="radio" name="time_zone" value="  Europe/Isle_of_Man  ">  Europe/Isle_of_Man  <br>
+<input type="radio" name="time_zone" value="  Europe/Istanbul ">  Europe/Istanbul <br>
+<input type="radio" name="time_zone" value="  Europe/Jersey ">  Europe/Jersey <br>
+<input type="radio" name="time_zone" value="  Europe/Kaliningrad  ">  Europe/Kaliningrad  <br>
+<input type="radio" name="time_zone" value="  Europe/Kiev ">  Europe/Kiev <br>
+<input type="radio" name="time_zone" value="  Europe/Lisbon ">  Europe/Lisbon <br>
+<input type="radio" name="time_zone" value="  Europe/Ljubljana  ">  Europe/Ljubljana  <br>
+<input type="radio" name="time_zone" value="  Europe/London ">  Europe/London <br>
+<input type="radio" name="time_zone" value="  Europe/Luxembourg ">  Europe/Luxembourg <br>
+<input type="radio" name="time_zone" value="  Europe/Madrid ">  Europe/Madrid <br>
+<input type="radio" name="time_zone" value="  Europe/Malta  ">  Europe/Malta  <br>
+<input type="radio" name="time_zone" value="  Europe/Mariehamn  ">  Europe/Mariehamn  <br>
+<input type="radio" name="time_zone" value="  Europe/Minsk  ">  Europe/Minsk  <br>
+<input type="radio" name="time_zone" value="  Europe/Monaco ">  Europe/Monaco <br>
+<input type="radio" name="time_zone" value="  Europe/Moscow ">  Europe/Moscow <br>
+<input type="radio" name="time_zone" value="  Europe/Nicosia  ">  Europe/Nicosia  <br>
+<input type="radio" name="time_zone" value="  Europe/Oslo ">  Europe/Oslo <br>
+<input type="radio" name="time_zone" value="  Europe/Paris  ">  Europe/Paris  <br>
+<input type="radio" name="time_zone" value="  Europe/Podgorica  ">  Europe/Podgorica  <br>
+<input type="radio" name="time_zone" value="  Europe/Prague ">  Europe/Prague <br>
+<input type="radio" name="time_zone" value="  Europe/Riga ">  Europe/Riga <br>
+<input type="radio" name="time_zone" value="  Europe/Rome ">  Europe/Rome <br>
+<input type="radio" name="time_zone" value="  Europe/Samara ">  Europe/Samara <br>
+<input type="radio" name="time_zone" value="  Europe/San_Marino ">  Europe/San_Marino <br>
+<input type="radio" name="time_zone" value="  Europe/Sarajevo ">  Europe/Sarajevo <br>
+<input type="radio" name="time_zone" value="  Europe/Simferopol ">  Europe/Simferopol <br>
+<input type="radio" name="time_zone" value="  Europe/Skopje ">  Europe/Skopje <br>
+<input type="radio" name="time_zone" value="  Europe/Sofia  ">  Europe/Sofia  <br>
+<input type="radio" name="time_zone" value="  Europe/Stockholm  ">  Europe/Stockholm  <br>
+<input type="radio" name="time_zone" value="  Europe/Tallinn  ">  Europe/Tallinn  <br>
+<input type="radio" name="time_zone" value="  Europe/Tirane ">  Europe/Tirane <br>
+<input type="radio" name="time_zone" value="  Europe/Tiraspol ">  Europe/Tiraspol <br>
+<input type="radio" name="time_zone" value="  Europe/Uzhgorod ">  Europe/Uzhgorod <br>
+<input type="radio" name="time_zone" value="  Europe/Vaduz  ">  Europe/Vaduz  <br>
+<input type="radio" name="time_zone" value="  Europe/Vatican  ">  Europe/Vatican  <br>
+<input type="radio" name="time_zone" value="  Europe/Vienna ">  Europe/Vienna <br>
+<input type="radio" name="time_zone" value="  Europe/Vilnius  ">  Europe/Vilnius  <br>
+<input type="radio" name="time_zone" value="  Europe/Volgograd  ">  Europe/Volgograd  <br>
+<input type="radio" name="time_zone" value="  Europe/Warsaw ">  Europe/Warsaw <br>
+<input type="radio" name="time_zone" value="  Europe/Zagreb ">  Europe/Zagreb <br>
+<input type="radio" name="time_zone" value="  Europe/Zaporozhye ">  Europe/Zaporozhye <br>
+<input type="radio" name="time_zone" value="  Europe/Zurich ">  Europe/Zurich
+
+
+
+
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- Next Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="Pacific" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+
+<form>
+<input type="radio" name="time_zone" value="  Pacific/Apia  ">  Pacific/Apia  <br>
+<input type="radio" name="time_zone" value="  Pacific/Auckland  ">  Pacific/Auckland  <br>
+<input type="radio" name="time_zone" value="  Pacific/Chatham ">  Pacific/Chatham <br>
+<input type="radio" name="time_zone" value="  Pacific/Chuuk ">  Pacific/Chuuk <br>
+<input type="radio" name="time_zone" value="  Pacific/Easter  ">  Pacific/Easter  <br>
+<input type="radio" name="time_zone" value="  Pacific/Efate ">  Pacific/Efate <br>
+<input type="radio" name="time_zone" value="  Pacific/Enderbury ">  Pacific/Enderbury <br>
+<input type="radio" name="time_zone" value="  Pacific/Fakaofo ">  Pacific/Fakaofo <br>
+<input type="radio" name="time_zone" value="  Pacific/Fiji  ">  Pacific/Fiji  <br>
+<input type="radio" name="time_zone" value="  Pacific/Funafuti  ">  Pacific/Funafuti  <br>
+<input type="radio" name="time_zone" value="  Pacific/Galapagos ">  Pacific/Galapagos <br>
+<input type="radio" name="time_zone" value="  Pacific/Gambier ">  Pacific/Gambier <br>
+<input type="radio" name="time_zone" value="  Pacific/Guadalcanal ">  Pacific/Guadalcanal <br>
+<input type="radio" name="time_zone" value="  Pacific/Guam  ">  Pacific/Guam  <br>
+<input type="radio" name="time_zone" value="  Pacific/Honolulu  ">  Pacific/Honolulu  <br>
+<input type="radio" name="time_zone" value="  Pacific/Johnston  ">  Pacific/Johnston  <br>
+<input type="radio" name="time_zone" value="  Pacific/Kiritimati  ">  Pacific/Kiritimati  <br>
+<input type="radio" name="time_zone" value="  Pacific/Kosrae  ">  Pacific/Kosrae  <br>
+<input type="radio" name="time_zone" value="  Pacific/Kwajalein ">  Pacific/Kwajalein <br>
+<input type="radio" name="time_zone" value="  Pacific/Majuro  ">  Pacific/Majuro  <br>
+<input type="radio" name="time_zone" value="  Pacific/Marquesas ">  Pacific/Marquesas <br>
+<input type="radio" name="time_zone" value="  Pacific/Midway  ">  Pacific/Midway  <br>
+<input type="radio" name="time_zone" value="  Pacific/Nauru ">  Pacific/Nauru <br>
+<input type="radio" name="time_zone" value="  Pacific/Niue  ">  Pacific/Niue  <br>
+<input type="radio" name="time_zone" value="  Pacific/Norfolk ">  Pacific/Norfolk <br>
+<input type="radio" name="time_zone" value="  Pacific/Noumea  ">  Pacific/Noumea  <br>
+<input type="radio" name="time_zone" value="  Pacific/Pago_Pago ">  Pacific/Pago_Pago <br>
+<input type="radio" name="time_zone" value="  Pacific/Palau ">  Pacific/Palau <br>
+<input type="radio" name="time_zone" value="  Pacific/Pitcairn  ">  Pacific/Pitcairn  <br>
+<input type="radio" name="time_zone" value="  Pacific/Pohnpei ">  Pacific/Pohnpei <br>
+<input type="radio" name="time_zone" value="  Pacific/Ponape  ">  Pacific/Ponape  <br>
+<input type="radio" name="time_zone" value="  Pacific/Port_Moresby  ">  Pacific/Port_Moresby  <br>
+<input type="radio" name="time_zone" value="  Pacific/Rarotonga ">  Pacific/Rarotonga <br>
+<input type="radio" name="time_zone" value="  Pacific/Saipan  ">  Pacific/Saipan  <br>
+<input type="radio" name="time_zone" value="  Pacific/Samoa ">  Pacific/Samoa <br>
+<input type="radio" name="time_zone" value="  Pacific/Tahiti  ">  Pacific/Tahiti  <br>
+<input type="radio" name="time_zone" value="  Pacific/Tarawa  ">  Pacific/Tarawa  <br>
+<input type="radio" name="time_zone" value="  Pacific/Tongatapu ">  Pacific/Tongatapu <br>
+<input type="radio" name="time_zone" value="  Pacific/Truk  ">  Pacific/Truk  <br>
+<input type="radio" name="time_zone" value="  Pacific/Wake  ">  Pacific/Wake  <br>
+<input type="radio" name="time_zone" value="  Pacific/Wallis  ">  Pacific/Wallis  <br>
+<input type="radio" name="time_zone" value="  Pacific/Yap ">  Pacific/Yap
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+<!-- Next Modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Indian" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+
+<form>
+<input type="radio" name="time_zone" value="  Indian/Antananarivo ">  Indian/Antananarivo <br>
+<input type="radio" name="time_zone" value="  Indian/Chagos ">  Indian/Chagos <br>
+<input type="radio" name="time_zone" value="  Indian/Christmas  ">  Indian/Christmas  <br>
+<input type="radio" name="time_zone" value="  Indian/Cocos  ">  Indian/Cocos  <br>
+<input type="radio" name="time_zone" value="  Indian/Comoro ">  Indian/Comoro <br>
+<input type="radio" name="time_zone" value="  Indian/Kerguelen  ">  Indian/Kerguelen  <br>
+<input type="radio" name="time_zone" value="  Indian/Mahe ">  Indian/Mahe <br>
+<input type="radio" name="time_zone" value="  Indian/Maldives ">  Indian/Maldives <br>
+<input type="radio" name="time_zone" value="  Indian/Mauritius  ">  Indian/Mauritius  <br>
+<input type="radio" name="time_zone" value="  Indian/Mayotte  ">  Indian/Mayotte  <br>
+<input type="radio" name="time_zone" value="  Indian/Reunion  ">  Indian/Reunion
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- New Modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="Asia" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Time Zone</h4>
+        </div>
+        <div class="modal-body">
+
+
+<form>
+<input type="checkbox" name="time_zone" value=" Asia/Aden ">  Asia/Aden <br>
+<input type="checkbox" name="time_zone" value=" Asia/Almaty ">  Asia/Almaty <br>
+<input type="checkbox" name="time_zone" value=" Asia/Amman  ">  Asia/Amman  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Anadyr ">  Asia/Anadyr <br>
+<input type="checkbox" name="time_zone" value=" Asia/Aqtau  ">  Asia/Aqtau  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Aqtobe ">  Asia/Aqtobe <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ashgabat ">  Asia/Ashgabat <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ashkhabad  ">  Asia/Ashkhabad  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Baghdad  ">  Asia/Baghdad  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Bahrain  ">  Asia/Bahrain  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Baku ">  Asia/Baku <br>
+<input type="checkbox" name="time_zone" value=" Asia/Bangkok  ">  Asia/Bangkok  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Beirut ">  Asia/Beirut <br>
+<input type="checkbox" name="time_zone" value=" Asia/Bishkek  ">  Asia/Bishkek  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Brunei ">  Asia/Brunei <br>
+<input type="checkbox" name="time_zone" value=" Asia/Calcutta ">  Asia/Calcutta <br>
+<input type="checkbox" name="time_zone" value=" Asia/Choibalsan ">  Asia/Choibalsan <br>
+<input type="checkbox" name="time_zone" value=" Asia/Chongqing  ">  Asia/Chongqing  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Chungking  ">  Asia/Chungking  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Colombo  ">  Asia/Colombo  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Dacca  ">  Asia/Dacca  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Damascus ">  Asia/Damascus <br>
+<input type="checkbox" name="time_zone" value=" Asia/Dhaka  ">  Asia/Dhaka  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Dili ">  Asia/Dili <br>
+<input type="checkbox" name="time_zone" value=" Asia/Dubai  ">  Asia/Dubai  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Dushanbe ">  Asia/Dushanbe <br>
+<input type="checkbox" name="time_zone" value=" Asia/Gaza ">  Asia/Gaza <br>
+<input type="checkbox" name="time_zone" value=" Asia/Harbin ">  Asia/Harbin <br>
+<input type="checkbox" name="time_zone" value=" Asia/Hebron ">  Asia/Hebron <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ho_Chi_Minh  ">  Asia/Ho_Chi_Minh  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Hong_Kong  ">  Asia/Hong_Kong  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Hovd ">  Asia/Hovd <br>
+<input type="checkbox" name="time_zone" value=" Asia/Irkutsk  ">  Asia/Irkutsk  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Istanbul ">  Asia/Istanbul <br>
+<input type="checkbox" name="time_zone" value=" Asia/Jakarta  ">  Asia/Jakarta  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Jayapura ">  Asia/Jayapura <br>
+<input type="checkbox" name="time_zone" value=" Asia/Jerusalem  ">  Asia/Jerusalem  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kabul  ">  Asia/Kabul  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kamchatka  ">  Asia/Kamchatka  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Karachi  ">  Asia/Karachi  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kashgar  ">  Asia/Kashgar  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kathmandu  ">  Asia/Kathmandu  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Katmandu ">  Asia/Katmandu <br>
+<input type="checkbox" name="time_zone" value=" Asia/Khandyga ">  Asia/Khandyga <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kolkata  ">  Asia/Kolkata  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Krasnoyarsk  ">  Asia/Krasnoyarsk  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kuala_Lumpur ">  Asia/Kuala_Lumpur <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kuching  ">  Asia/Kuching  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Kuwait ">  Asia/Kuwait <br>
+<input type="checkbox" name="time_zone" value=" Asia/Macao  ">  Asia/Macao  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Macau  ">  Asia/Macau  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Magadan  ">  Asia/Magadan  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Makassar ">  Asia/Makassar <br>
+<input type="checkbox" name="time_zone" value=" Asia/Manila ">  Asia/Manila <br>
+<input type="checkbox" name="time_zone" value=" Asia/Muscat ">  Asia/Muscat <br>
+<input type="checkbox" name="time_zone" value=" Asia/Nicosia  ">  Asia/Nicosia  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Novokuznetsk ">  Asia/Novokuznetsk <br>
+<input type="checkbox" name="time_zone" value=" Asia/Novosibirsk  ">  Asia/Novosibirsk  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Omsk ">  Asia/Omsk <br>
+<input type="checkbox" name="time_zone" value=" Asia/Oral ">  Asia/Oral <br>
+<input type="checkbox" name="time_zone" value=" Asia/Phnom_Penh ">  Asia/Phnom_Penh <br>
+<input type="checkbox" name="time_zone" value=" Asia/Pontianak  ">  Asia/Pontianak  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Pyongyang  ">  Asia/Pyongyang  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Qatar  ">  Asia/Qatar  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Qyzylorda  ">  Asia/Qyzylorda  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Rangoon  ">  Asia/Rangoon  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Riyadh ">  Asia/Riyadh <br>
+<input type="checkbox" name="time_zone" value=" Asia/Saigon ">  Asia/Saigon <br>
+<input type="checkbox" name="time_zone" value=" Asia/Sakhalin ">  Asia/Sakhalin <br>
+<input type="checkbox" name="time_zone" value=" Asia/Samarkand  ">  Asia/Samarkand  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Seoul  ">  Asia/Seoul  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Shanghai ">  Asia/Shanghai <br>
+<input type="checkbox" name="time_zone" value=" Asia/Singapore  ">  Asia/Singapore  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Taipei ">  Asia/Taipei <br>
+<input type="checkbox" name="time_zone" value=" Asia/Tashkent ">  Asia/Tashkent <br>
+<input type="checkbox" name="time_zone" value=" Asia/Tbilisi  ">  Asia/Tbilisi  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Tehran ">  Asia/Tehran <br>
+<input type="checkbox" name="time_zone" value=" Asia/Tel_Aviv ">  Asia/Tel_Aviv <br>
+<input type="checkbox" name="time_zone" value=" Asia/Thimbu ">  Asia/Thimbu <br>
+<input type="checkbox" name="time_zone" value=" Asia/Thimphu  ">  Asia/Thimphu  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Tokyo  ">  Asia/Tokyo  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ujung_Pandang  ">  Asia/Ujung_Pandang  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ulaanbaatar  ">  Asia/Ulaanbaatar  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ulan_Bator ">  Asia/Ulan_Bator <br>
+<input type="checkbox" name="time_zone" value=" Asia/Urumqi ">  Asia/Urumqi <br>
+<input type="checkbox" name="time_zone" value=" Asia/Ust-Nera ">  Asia/Ust-Nera <br>
+<input type="checkbox" name="time_zone" value=" Asia/Vientiane  ">  Asia/Vientiane  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Vladivostok  ">  Asia/Vladivostok  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Yakutsk  ">  Asia/Yakutsk  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Yekaterinburg  ">  Asia/Yekaterinburg  <br>
+<input type="checkbox" name="time_zone" value=" Asia/Yerevan  ">  Asia/Yerevan
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- END OF TIME ZONES MODALS -->
