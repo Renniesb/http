@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ClickOutsideModule } from 'ng2-click-outside';
 
 import { LoginRoutingModule }   from './login-routing.module';
 
@@ -45,7 +46,8 @@ import { MainTutorialComponent } from './tutorial/tutorial.component'
     LoginRoutingModule,
     AppRoutingModule,
     SettingsRoutingModule,
-    TutorialRoutingModule
+    TutorialRoutingModule,
+    ClickOutsideModule
   ],
   providers: [DialogService],
   bootstrap: [AppComponent]

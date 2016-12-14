@@ -1,26 +1,29 @@
 import { Component } from '@angular/core';
-import { WpostService} from '../wpost.service.ts';
-import { ArticleService} from './article.service.ts'
+import { WpostService} from '../wpost.service';
+import { ArticleService} from './article.service'
 @Component({
   template:  `
 
 	 <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+               <div class="col-sm-8">
                     <h3>Choose tweets</h3>
 
                 <div class="scroll panel-group">
 
                 <div *ngFor="let article of articles | async" class="panel panel-primary">
                   <div class="panel-body">
-                  <input type="checkbox" (change)="onChange(article.title)">
-                 		<q>{{article.title}}</q>
+                    <input type="checkbox" (change)="onChange(article.title)">
+                   		<q>{{article.title}}</q>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-warning"><a routerLink="./manage" routerLinkActive="active">Schedule Tweets</a></button>
-    </div>
+               </div>
+               <button type="button" class="btn btn-default" routerLink="./manage" routerLinkActive="active"><a>Schedule Tweets</a>
+               </button>
+              </div>
 
+            </div>
+    </div>
 
   `,
    providers: [WpostService, ArticleService]
@@ -29,8 +32,10 @@ import { ArticleService} from './article.service.ts'
 
 
 export class SelectTweetsComponent {
-
-	articles: any;
+  articles: any;
+	tweets: any;
+  id: any;
+  modal: any;
 
 	constructor (private wpservice: WpostService, private articleservice: ArticleService) {
 
@@ -45,22 +50,32 @@ export class SelectTweetsComponent {
 		this.getNew();
   }
 
+
+
 onChange(article) {
 
+  this.tweets = this.articleservice.getTweets();
 
+     let isTweet = this.articleservice.findWithAttr(this.tweets, 'name', article);
 
-   if (this.articleservice.getArticles().indexOf(article) ===-1) {
-                this.articleservice.addArticle(article);
-                console.log(this.articleservice.getArticles());
+   if (isTweet === false) {
+               let modalid = "";
+                this.id = this.articleservice.getId();
+                this.modal = this.articleservice.getModal();
+                modalid = "#" + this.modal;
+                this.articleservice.addArticle(article,"Click Calendar to schedule",this.id,this.modal, modalid, "","");
+                console.log(this.articleservice.getTweets());
 
 
 
             }
   else {
 
-               //this.articleservice.getArticles().splice(article, 1);
-               console.log(this.articleservice.getArticles());
-               alert("tweet is already selected");
+               // this.articleservice.getTweets().splice( this.tweets.indexOf(isTweet), 1);
+               console.log(this.articleservice.getTweets());
+
+
+
         };
 
 }

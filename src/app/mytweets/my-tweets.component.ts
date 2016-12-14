@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <nav>
       <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Select Tweets</a>
       <a routerLink="./manage" routerLinkActive="active">Schedule Tweets</a>
-      <a routerLink="./tweets" routerLinkActive="active"> Tweets Scheduled</a>
+
     </nav>
     <router-outlet></router-outlet>
   `

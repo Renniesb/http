@@ -1,30 +1,49 @@
-<!-- <ul *ngFor="let article of articles | async">
-    		{{article.title}}
-</ul> -->
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" href="#"><img class="img-responsive" src="/assets/img/Rossella-Logo.png" width="200px" ></a>
-        </div>
-      <div class="collapse navbar-collapse navHeaderCollapse">
-        <ul class="nav navbar-nav">
-          <li><a id="myPopover" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Step by step app walkthrough." routerLink="/tutorial" routerLinkActive="active">Tutorial</a>
-          </li>
-          <li><a id="myPopover2" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Change settings like time zone and tweet topics." routerLink="/settings" routerLinkActive="active">Settings</a>
-          </li>
-          <li><a id="myPopover3" data-toggle="popover"   data-trigger="hover" data-placement="bottom" data-content="Select and schedule tweets here"  routerLink="/mytweets" routerLinkActive="active">My Tweets</a>
-          </li>
-          <li><a id="myPopover4" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Login and out of the application here" routerLink="/login" routerLinkActive="active">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</nav>
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                    <a class="navbar-brand" href="#"><img src="http://i.imgur.com/0In2UPa.jpg" width="125px" class="img-responsive" alt=""></a>
+                </div>
+              <div class="collapse navbar-collapse navHeaderCollapse">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Topics <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><input type="checkbox">Advertising</li>
+                      <li><input type="checkbox">Social Media</li>
+                      <li><input type="checkbox">Millenials</li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Change Time Zones<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><button  data-toggle="modal" data-target="#Africa">Africa</button></li>
+                      <li  data-toggle="modal" data-target="#America"><button>America</button></li>
+                      <li><button data-toggle="modal" data-target="#Antartica">Antartica</button></li>
+                      <li><button data-toggle="modal" data-target="#Asia">Asia</button></li>
+                      <li><button data-toggle="modal" data-target="#Atlantic">Atlantic</button></li>
+                      <li><button data-toggle="modal" data-target="#Arctic">Arctic</button></li>
+                      <li><button data-toggle="modal" data-target="#Australia">Australia</button></li>
+                      <li><button data-toggle="modal" data-target="#Europe">Europe</button></li>
+                      <li><button data-toggle="modal" data-target="#Indian">Indian</button></li>
+                      <li><button data-toggle="modal" data-target="#Pacific">Pacific</button></li>
+                    </ul>
+                  </li>
+                  <li><a class="shownav" id="myPopover" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Step by step app walkthrough." routerLink="/tutorial" routerLinkActive="active"><img src="http://i.imgur.com/LHPFo9T.png" width="30px" alt="tutorial-hat">Tutorial</a></li>
+                  <li><a class="shownav" id="myPopover2" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Change settings like time zone and tweet topics." routerLink="/settings" routerLinkActive="active"><img src="http://i.imgur.com/JS6dRpk.png" width="20px" alt="settings-gear">Settings</a></li>
+                  <li><a class="shownav" id="myPopover3" data-toggle="popover"   data-trigger="hover" data-placement="bottom" data-content="Select and schedule tweets here"  routerLink="/mytweets" routerLinkActive="active">My Tweets</a>
+                  </li>
+                  <li><a class="shownav" id="myPopover4" data-toggle="popover"  data-trigger="hover" data-placement="bottom" data-content="Login and out of the application here" routerLink="/login" routerLinkActive="active"><img src="http://i.imgur.com/o81q1O9.png" width="90px" style="margin-top: 1px" alt=""></a></li>
+
+                </ul>
+              </div>
+            </div>
+        </nav>
+
 
 <router-outlet></router-outlet>

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Master Styles */
+
+
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +14,7 @@ h2, h3 {
   font-weight: lighter;
 }
 body {
-   padding-top: 100px;
+
    background-color: #e36b2e;
    color: white;
 /*   background-color: #3d86c3*/;
@@ -25,8 +27,13 @@ body {
 }
 
 .navbar {
-  height: 100px;
-  background-color: white;
+  height: 60px;
+  background-color: #e36b2e;
+  margin-bottom: 0;
+}
+
+.navbar a {
+  background-color: #e36b2e;
 }
 
 .navbar-brand {
@@ -89,6 +96,10 @@ p{
   margin-top: 30px;
 }
 
+.navbar-default {
+  border: none;
+}
+
 .panel {
   background-color: #fcf8e3;
 }
@@ -144,8 +155,8 @@ nav a {
   text-decoration: none;
   margin-top: 30px;
   display: inline-block;
-  /*background-color: #eee;*/
-  background-color: white;
+  background-color: #eee;
+ /* background-color: white;*/
   border-radius: 4px;
 }
 
@@ -253,4 +264,51 @@ nav a.active {
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 768px) {
+
+  .dropdown{
+    display: block;
+    margin-left: 0px;
+  }
+  .editopics {
+    display: none;
+  }
+
+  .schedule {
+    display: none;
+  }
+
+  .time {
+    display: none;
+  }
+
+}
+@media (min-width: 768px) {
+  .schedule{
+    display: inline;
+  }
+  .navbar-default .navbar-nav>li>.shownav {
+    display: inline;
+
+    padding-left: 0;
+    padding-right: 0;
+    color: white;
+
+  }
+
+  ul li{
+    padding: 0;
+    padding-left: 20px;
+
+  }
+  .navbar-default .navbar-nav>li>a {
+    display: none;
+
+  }
+  .editopics {
+    margin-right: 45px;
+  }
+
 }

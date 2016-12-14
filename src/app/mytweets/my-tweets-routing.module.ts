@@ -1,14 +1,13 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { MyTweetsComponent }           from './my-tweets.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
-import { TweetsScheduledComponent }    from './tweets-scheduled.component';
-import { ScheduledDetailComponent }    from './scheduled-detail.component';
+
 
 
 import { AuthGuard }                from '../auth-guard.service';
+
 
 @NgModule({
   imports: [
@@ -24,8 +23,6 @@ import { AuthGuard }                from '../auth-guard.service';
             children: [
               { path: 'select', component: SelectTweetsComponent },
               { path: 'manage', component: ManageTweetsComponent },
-              { path: 'tweets', component: TweetsScheduledComponent },
-              { path: 'tweets/:id', component: ScheduledDetailComponent },
               { path: '', component: SelectTweetsComponent }
             ]
           }

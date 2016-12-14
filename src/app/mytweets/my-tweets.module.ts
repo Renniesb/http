@@ -4,8 +4,6 @@ import { CommonModule }   from '@angular/common';
 import { MyTweetsComponent }           from './my-tweets.component';
 import { SelectTweetsComponent }    from './select-tweets.component';
 import { ManageTweetsComponent }    from './manage-tweets.component';
-import { TweetsScheduledComponent } from './tweets-scheduled.component';
-import { ScheduledDetailComponent }    from './scheduled-detail.component';
 import { FormsModule }    from '@angular/forms';
 
 
@@ -23,9 +21,7 @@ import { MyTweetsRoutingModule }       from './my-tweets-routing.module';
   declarations: [
     MyTweetsComponent,
     SelectTweetsComponent,
-    ManageTweetsComponent,
-    TweetsScheduledComponent,
-    ScheduledDetailComponent
+    ManageTweetsComponent
   ]
 })
 export class MyTweetsModule {}
